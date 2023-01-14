@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Room Listings</title>
+    <title>modal</title>
+    <style>
+      #cont{
+        width: 100%;
+      }
+      #pic {
+        height: 15%;
+        width: 15%;
+      }
+
+      #slider {
+        height: 100%;
+        width: 100%;
+      }
+
+      #logo {
+        height: 180px;
+        width: 400px;
+
+      }
+
+      table {
+        margin: 5px;
+        margin-top: 15px;
+      }
+
+      #footer1 {
+        background-color: white;
+      }
+
+      @media (max-width: 766px) {
+        #slider {
+          margin-top: 50px;
+          width: 250px;
+          height: 250px;
+        }
+
+        #logo {
+          height: 60%;
+          width: 60%;
+        }
+
+        #footer1 {
+          margin-left: -900%;
+          background-color: white;
+        }
+
+        #pic {
+          height: 15vh;
+          width: 15vh;
+          margin-left: -800%;
+
+        }
+      }
+
+      /* #modal{
+      margin-top: -50px;
+    } */
+    </style>  
+
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/addlisting.css" rel="stylesheet">
+<link href="/css/roompage.css" rel="stylesheet">
+      <%- include('./partials/bootstrap_link.ejs')%>
+      <%- include('./partials/_script.ejs')%>
+  
+</head>
+
+<body>
+
+  <!-- Header Section  -->
+  <%- include('./partials/header.ejs')%>
+
+    <!-- ======= Portfolio Section ======= -->
+    <section class="portfolio" id="portfolio">
+
+      <div class="container text-center">
+        <h2>
+          Indore's Prime Locations
+        </h2>
+
+        <p style="color: white;">
+          Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id.
+          Ut cum nisl moderatius, Per nihil dicant commodo an.
+        </p>
+      </div>
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+    <!-- ========================================================================================================= -->
+
+
+    <!-- ========================== Popular Courses Section =============================== -->
+    <section id="popular-courses" class="courses">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Check Out Indore Rooms</h2>
+        </div>
+
+        <div class="container py-3">
+          <!-- Card Start -->
+          <%houseList.forEach((data,index)=>{%>
+              <div class="row ">
+                <div class="row" id="middle" style="box-shadow:1px 1px 1px 2px rgb(144, 142, 142)">
+                  <div class="col-md-6">
+                    <div class="card-body">
+                        
+                            <center>  <table >
+                                <tr>
+                                    <td><img height="40px" width="40px" src="https://bootdey.com/img/Content/avatar/avatar7.png"> 
+                                        <strong>
+                                          <%lister.forEach(detail=>{%>
+                                            <%if(data.userEmailId==detail.email){%>
+                                              <%=detail.name%>
+                                                <%}})%>
+                                        </strong>
+                                    </td>
+                                    <!-- <center><td>Parul Sahu</td></center> -->
+                                </tr>
+                                  <tr><td colspan="3"><img height="20" width="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAB7CAMAAABjGQ9NAAAAYFBMVEX///8AAAD8/PzMzMz39/e/v7+hoaGUlJSenp7l5eXs7Ozg4OCGhoavr6/GxsbV1dVfX18uLi4ZGRlPT08zMzM7OzsQEBBBQUFzc3MmJiYdHR23t7dpaWlYWFhGRkZ/f39MM+OoAAAEAElEQVRogb2b6YLqIAyFpa1btYvWfRx9/7e8U70utXDIVr/fwjEIISRxNBKQVePiWl9Wa7deXeprMa4yyTR83XTW7Nwnu2aWDqyfVNdNT/fB5lolgylnRRMUvtMUwxifTcImvxk/GUC9IAjfKYyVqy1Z2rltZaicLBnKLUuzTTe/MKWdu8xtpMv+cY6zKy2k6Zusi8GWmwqlnZtqpa9iaeeuOmnuBu+y1EhPVNLOTeTSY6W0c2Op9Fwt7ZzwnCd7A+29zMNptvgL0WYvTaSdEzi4hHNzIbb8VZ8ZSTs340pnZtLOcSMZnUPrwnTslmZzDZffXj5YhmcnU+0Tx3DK2T7W02JcTOsj4bOcM36OznZInx9OD9FPn+nS81iEdsg7n89j6jv6lfITmap/M8Zu2x+yNjZj5Qv9qxUcc6BKJzAeP/lfHRU8GheqU6+gCaE9i88G9ZkEf7xw/AfdMDV4gldY2E1AP0y9zGrhHOg710RtFDXkYFwOxm1p0hnwkns4EgSXR5pLR9r4RgK3H1E7BycV+yfgD0/ox3qxAN4cX0jgiO8WJG3kWrCLkI982g1mSOHIFIyk2T1fh2fA7gk4xDXtFkX7HD9qwZOZuM9HIH+IAxAQ7mxo0tCnwoFgHNWnomwD+sHR/UfNQKDt2oBxKOTAB+RFjsLesOHI7CPNrf3xK5kFfuNfqjROL4WmQV+YkXBCni1wzhL8nKB5tdtE0AZX9/1Ehs7l31oxcg+RnN7x8zorI48yTo4PRT83zunLkiSNPt/Iu7wFL3rLZVm2M+blMp7Zp+/yFmnS3A8vlZ6YajOzXJa5Hm4qGx9xHvTD/Z9Y+ZEOun786HPnDwQ5dEr1kwI1YnnH6phJalWZjeEbUV1YW6i5IyvXoHcZGeI7rIdFUlVaHLRIJou7APS1A3bNwNBwRfOD1nC52fqrVNV6oDvjilJsazhO0WJWyo6LWDobQU9cBwyPR40hOEG5H/QoxVCfnoB47cQPo0YSRFqBN+mukV0p6g6TGzIHY9TRJImezBrJBL1UVtKCc2Zwvh7Eq45dyOUwAjlIsXpYC4M0P7ztZtuxmHCeZ41xmyquFXaxbJW8Qe/yUbat+SBr20uTH8XitjEETt89oCbKeaDa1RNiLYoNJWjVhaZhCIfc+mi/iCefBlrxltgbSfMGihFpqBO0yTHArtXcmXZBuU5VGy4F8D+LoaXBqg+84i2hcN0mIMdkfg/TfOVvPf5V/8KKt/hW/RsrfqO/14ff4w/6T1Ojv3RQ+LxNh7o5vXQzIbz6l5bFe475NODN6eM9/6TNJ7F5PQ8tH340nl0w1M4VSx7u7UsOrcv0uw6tS5sKsUtu8JjvOI3GxpRr1T/U/gH3Ly8ff6+wywAAAABJRU5ErkJggg==">
+                                    <%=data.houseAddress%></td></tr>
+                                  <tr>
+                                       <td><strong>Rent :</strong><br><%=data.houseRent%> Rs.</td>
+                                       <td><b>looking for :</b><br><%=data.gender%> </td>
+                                       <td></td>
+                                  </tr>
+                                  <tr>
+                                        <td><b>House description :</b><%=data.houseDescription%></td>
+                                  </tr>
+                                  <tr> <td colspan="3"><center><button type="button" id="modal" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#staticBackdrop<%=index%>">
+                                    View more info
+                                  </button>
+                                
+                                </center></td></tr>
+                                  
+                              </table></center>
+                              <div>
+                                <div class="modal" id="staticBackdrop<%=index%>" data-backdrop="static" data-keyboard="false"
+                                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                  <div class="modal-dialog" id="const">
+                                    <div class="modal-content" id="cont">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">
+                                          <font style="color:rgb(19, 243, 236)">Dekh</font>Mate
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <!-- --------------------------------------------------------------------- -->
+                                        <div class="row">
+                                          <!-- ----------------------------------------image slider----------------------------- -->
+                                          <div class=" col-sm-6 col-lg-6">
+                                            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                              <div class="carousel-inner" id="slider">
+                                                <div class="carousel-item active">
+                                                  <img
+                                                    src="https://media.designcafe.com/wp-content/uploads/2021/09/15180410/pop-ceiling-designs-for-hall.jpg"
+                                                    class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                  <img
+                                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQckNogMdC4Mr1lPnOzcEpqVqnkQwjjIh_MUA&usqp=CAU"
+                                                    class="d-block w-100" alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                  <img
+                                                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2l0Y2hlbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                                    class="d-block w-100" alt="...">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!---------------------------Room details------------------------------------------>
+                                          <div class="col-lg-6" id="roomD1">
+                                            <p id="roomDis"></b><%=data.houseDescription%></p>
+                                          </div>
+                                        </div>
+                                        <hr>
+                                        <!-- -------------------------------------second row details----------------------------------------------- -->
+                                        <div class="row">
+                                          <div class="col-sm-8"style="width: auto;">
+                                            <table border="0" >
+                                              <tr>
+                                                <td><b>Name</b></td>
+                                                <td>:</td>
+                                                <td>   
+                                                  <%lister.forEach(detail=>{%>
+                                                    <%if(data.userEmailId==detail.email){%>
+                                                     <%=detail.name%>
+                                                       <%}})%></td>
+                                              </tr>
+                                              <tr>
+                                                <td><b>House Rent </b></td>
+                                                <td>:</td>
+                                                <td><%=data.houseRent%>  Rs.</td>
+                                              </tr>
+                                              <tr>
+                                                <td><b>Searching for</b></td>
+                                                <td>:</td>
+                                                <td><%=data.gender%></td>
+                                              </tr>
+                                              <tr>
+                                                <td><b>House Address</b></td>
+                                                <td>:</td>
+                                                <td><%=data.houseAddress%></td>
+                                              </tr>
+                            
+                                            </table>
+                                          </div>
+                                          
+                                            <form>
+                                              <div class="mb-3">
+                                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                                <input type="text" class="form-control" id="Email" value="<%=data.userEmailId%>" placeholder="<%=data.userEmailId%>" >
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Message:</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                              </div>
+                                              <div class="mb-3">
+                                                <button type="submit">Send email</button>
+                                              </div>
+
+                                            </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div id="cor<%=index%>" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="10000">
+                          <img src="/uploads/<%=data.houseImage1%>" height="300px" width="300px" class="d-block w-100"
+                            alt="..." style="padding-top : 100px">
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                          <img src="/uploads/<%=data.houseImage2%>" height="300px" width="300px" class="d-block w-100"
+                            alt="..." style="padding-top : 100px">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="/uploads/<%=data.houseImage3%>" height="300px" width="300px" class="d-block w-100"
+                            alt="..." style="padding-top : 100px">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-target="#cor<%=index%>" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only"><</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-target="#cor<%=index%>" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">></span>
+                      </button>
+                    </div><!-- End of carousel -->
+                  </div>
+                </div>
+              </div><!-- End of card -->
+          
+            <%})%>
+    </section>
+    <!-- =================================== Popular Courses Section ends ======================================== -->
+
+    </main><!-- End #main -->
+    <%- include('./partials/_footer.ejs')%>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <%- include('./partials/_script.ejs')%>
+</body>
+
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>DekhMate Project Website</title>
+
+  <%- include('./partials/bootstrap_link.ejs')%>
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header Section  -->
+  <%- include('./partials/header.ejs')%>
+ 
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(/img/hero-carousel/1.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to DekhMate </h2>
+                <p class="animate__animated animate__fadeInUp">"The DekhMate App makes finding roommates and rooms to share easy." Search Roommates, Flat shares, a roomate, rooms for rent, spare rooms with a roommate or roomates..</p>
+                <a href="/addlisting" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(/img/hero-carousel/2.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Connect with people from anywhere.</h2>
+                <p class="animate__animated animate__fadeInUp">Easily review house and rooms from potential roommates. Once you approve their booking. And get connect with each other in short time. </p>
+                <a href="/addlisting" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(/img/hero-carousel/3.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Get Perfect Match with Roomie</h2>
+                <p class="animate__animated animate__fadeInUp">Be the best roomie for your future roommate, We list finnest and secured roommate for our user. <strong style="color: rgb(64, 228, 234);">DekhMate</strong> gives you the different filter for rooms.</p>
+                <a href="/addlisting" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(/img/hero-carousel/4.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Rooms you'll love & roommates like you.</h2>
+                <p class="animate__animated animate__fadeInUp">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
+                <a href="/addlisting" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(/img/hero-carousel/5.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Finding a great roommate should be hassle free.</h2>
+                <p class="animate__animated animate__fadeInUp">In a few minutes, you can easily list your house or room on DekhMate.</p>
+                <a href="/addlisting" class="btn-get-started scrollto animate__animated animate__fadeInUp">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section> <!-- End Hero Section -->
+    
+      <main id="main">
+        <!-- ======= Featured Services Section Section ======= -->
+        <section id="featured-services">
+          <div class="container">
+            <div class="row">
+    
+              <div class="col-lg-4 box">
+                <i class="bi bi-geo-alt"></i>
+                <h4 class="title"><a href="">Matching Lifestyles</a></h4>
+                <p class="description">Find roommates that fit your preferences and lifestyle with personalized search results curated by our matching algorithm.</p>
+              </div>
+    
+              <div class="col-lg-4 box box-bg">
+                <i class="bi bi-house-door"></i>
+                <h4 class="title"><a href="">Find Perfect Room</a></h4>
+                <p class="description">Connect with potential roommates that are relevant and have a mutual intent. Refine and filter out any that are not a good fit. Chat with just those that matter.</p>
+              </div>
+    
+              <div class="col-lg-4 box">
+                <i class="bi bi-shield-check"></i>
+                <h4 class="title"><a href="">Secured Explore</a></h4>
+                <p class="description">A.I. and human vetted profiles. We keep the scammers out, and allow real people to connect safely on our platform with secure in-app messaging.</p>
+              </div>
+    
+            </div>
+          </div>
+        </section><!-- End Featured Services Section -->
+     
+      </main><!-- End #main -->
+
+      <section id="why-us" class="why-us">
+        <div class="container-fluid">
+  
+          <div class="row">
+  
+            <div class="col-lg-5 align-items-stretch position-relative video-box" style='background-image: url("/img/why-us.jpg");' data-aos="fade-right">
+              <a href="https://www.youtube.com/watch?v=-6j21NmYAg8" class="glightbox play-btn mb-4"></a>
+            </div>
+  
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch" data-aos="fade-left">
+  
+              <div class="content">
+                <h3>Explore How DekhMate With US. <strong>Your Place, Your Roommate </strong></h3>
+                <p>
+                    <strong>DekhMate</strong> helps you share a room or an entire home — on your terms. Welcome to the future of co-living!
+                </p>
+              </div>
+  
+              <div class="accordion-list">
+                <ul>
+                  <li data-aos="fade-up" data-aos-delay="100">
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Is DekhMate free to use?
+                      <i class="bi bi-chevron-down"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                      <p>
+                        Yes! It's free to create an account on Roomi for personal and business use. 
+
+                        If you're looking to rent out your room, you can have up to two active listings at one time and connect with up to 5 people per day for free.
+                        
+                        
+                        If you're looking for a roommate or a place to move, you can message up to 5 people per day for free.
+                        
+                        
+                        If you want to get verified, activate more listings, message more folks and get background check credits, you'll need to upgrade your account to a paid plan.                      </p>
+                    </div>
+                  </li>
+  
+                  <li data-aos="fade-up" data-aos-delay="200">
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> How do I get the most out of DekhMate? 
+                      <i class="bi bi-chevron-down"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                      <p>
+                        Your profile is a great way for others to learn more about you before they message you. When your profile is detailed, it helps others know that you're reliable and authentic—whether you're looking for a roommate or have a spare room for rent.
+
+                        The more complete your profile is, the more views and messages you are likely to receive. It's required that at least one profile photo is of you. No buildings, animals, objects, landscapes, or anything else that isn't you.
+                        
+                        We also encourage our users to reach out to others and introduce themselves.                      </p>
+                    </div>
+                  </li>
+  
+                  <li data-aos="fade-up" data-aos-delay="300">
+                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> How do I contact customer support?
+                      <i class="bi bi-chevron-down"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                      <p>
+                        We're here to help! If you need assistance, have feedback, or just want to say hey, send us an email at hello@roomiapp.com. We respond to every message!
+                      </p>
+                    </div>
+                  </li>
+  
+                </ul>
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Why Us Section -->
+
+          <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>First, you need a sufficiently compatible roommate, that's Step One, and the reason for our ROOMMATE MATCHING.
+
+            Submitting a profile via the link above is Step One to find a roommate, and many find that process more or less self-explanatory.
+            
+            (But most questions from those that didn't are already answered IN A LOT OF DETAIL below, thanks!)</p>
+        </div>
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>First Serve</h3>
+                </a>
+                <p>Everything we do at Roomi, we do for you. Got a question? Found a bug we should know about? Let us know at hello@roomiapp.com. (And yes, there are real people on the other end.)</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-filter"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Never Settle</h3>
+                </a>
+                <p>We're working toward a future where flexible, affordable shared living is the norm. We've got a long way to go, but with your support, we get closer every day.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-3.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-house"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Be Transparent</h3>
+                </a>
+                <p>In a world of shady listings, we built Roomi to be a breath of fresh air. We strive for transparency in everything we do, which sometimes means owning up to our mistakes. You deserve that from us.</p>
+                </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-4.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Empowers Renters</h3>
+                </a>
+                <p>It's your life, and your home. That's why we gave you the power to search by shared interests, amenities, move-in date—in short, by all the things that matter most to you.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-5.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-currency-rupee"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Velit Doloremque</h3>
+                </a>
+                <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
+            <div class="service-item">
+              <div class="img">
+                <img src="/img/service/services-6.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Stay Focused</h3>
+                </a>
+                <p>It's easy to get carried away with great ideas—but we'd rather bring you a few game-changing tools than a whole lot of mediocre ones. That's why we promise to get our current features right before we build something new.</p>
+                <a href="#" class="stretched-link"></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>About Us</h2>
+          <p>DekhMate is an online platform that helps students and young professional to find PGs or room partners based on common liking. It allows user to list their spare rooms, find accommodation or team up with others to start a share house.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="img/call-to-action-bg.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              DekhMate is the most trusted housing platform in the Indore that helps you rent houses and rooms easily, safely and securely. There are many options to find apartments for rent but when it comes to renting a house and a room in the Indore, landlords and renters prefer DekhMate. Read their DekhMate reviews. If you are an owner or a property manager or a real estate broker, you can easily list rental property on DekhMate.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circled"></i> Quickly shortlist houses & rooms based on rent, amenities, lifestyle preferences.</li>
+              <li><i class="bi bi-check-circled"></i> Connect with landlords and chat within Cirtru Inbox effortlessly.</li>
+              <li><i class="bi bi-check-circled"></i> Select your best rental and move in a place you can call home..</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+          <div class="container">
+    
+            <div class="section-header">
+              <h2>Contact</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+    
+            <div class="row">
+    
+              <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                  <div class="address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>SGSITS College near Janjeerwala Sqaure, Indore , Madhya Pradesh</p>
+                  </div>
+    
+                  <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>dekhmate@gmail.com</p>
+                  </div>
+    
+                  <div class="phone">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55s</p>
+                  </div>
+                  <iframe width="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.085941640757!2d75.89191055078248!3d22.72504683301102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd35df0f5b3d%3A0x77dd968e66ca42f2!2sRafael%20Tower%2C%20Greater%20Kailash%20Road%2C%20Old%20Palasia%2C%20Indore%2C%20Madhya%20Pradesh%20452001!5e0!3m2!1sen!2sin!4v1668444139057!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+    
+              </div>
+    
+              <div class="info">
+              <div class="col-lg-7 mt-1 mt-lg-0 d-flex align-items-stretch">
+                <form  method="post" onsubmit="mySubmit()" >
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="name">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="name" onkeyup="CheckName()" required>
+                      <div id="warning_name" style="display:none; color: darkred;">Please enter alphabates only</div>
+                    </div>
+                    <div class="form-group col-md-6 mt-3 mt-md-0">
+                      <label for="name">Your Email</label>
+                      <input type="email" class="form-control" name="email" id="email" onkeyup="CheckMail()" required>
+                      <div id="warning_Email" style="display:none; color: darkred;">Invalid Email</div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="name">Subject</label>
+                    <input type="text" class="form-control" name="subject" id="subject" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label for="name">Message</label>
+                    <textarea class="form-control" name="message" rows="10" id="message" required></textarea>
+                  </div>
+                  <div class="my-3">
+                   
+                    <div id="sent-message"></div>
+                  </div>
+                  <div class="text-center"><button type="submit" id="submit">Send Message</button></div>
+                </form>
+              </div>
+            </div>
+    
+            </div>
+    
+          </div>
+        </section><!-- End Contact Section -->
+
+        <!-- Footer Section Partials -->
+
+        <%- include('./partials/_footer.ejs')%>
+
+    
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+      <%- include('./partials/_script.ejs')%>
+    
+    </body>
+    
+    </html>

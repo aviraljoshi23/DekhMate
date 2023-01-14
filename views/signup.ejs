@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sign Up to DekhMate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <%- include('./partials/bootstrap_link.ejs')%>
+    <!-- Template Main CSS File -->
+    <link href="/css/userlogsign.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">DekhMate</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
+                    <% if(typeof message!=='undefined' ){ %>
+                      <p class="text-center big">
+                        <%=message%>
+                      </p>
+                      <% } %>
+                  </div>
+
+                  <form class="row g-3 needs-validation" method="post">
+                    <div class="col-12">
+                      <label for="yourName" class="form-label">Your Name</label>
+                      <input type="text" name="name" class="form-control" id="yourName" oninput="checkName()" required>
+                      <div id="warning_name" style="display:none; color: red;">Please enter alphabates only</div>
+                      <div class="invalid-feedback">Please, enter your name!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Your Email</label>
+                      <input type="email" name="email" class="form-control" id="yourEmail" oninput="checkEmail()"
+                        required>
+                      <div id="warning_Email" style="display:none; color: red;">Invalid Email</div>
+                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourContact" class="form-label">Your Contact No.</label>
+                      <input type="text" name="contact" class="form-control" maxlength="10" id="yourContactNo"
+                        oninput="checkContact()" required>
+                      <div id="warning_Contact" style="display:none; color: red;">Invalid Contact</div>
+                      <div id="warning_Contact2" style="display:none; color: red;">Password is too short, Not a valid
+                        number</div>
+                      <div class="invalid-feedback">Please, enter your contact!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="yourPassword"
+                        oninput="checkPassword()" required>
+                      <div id="warning_password" style="display:none; color: red;">Password is too short</div>
+                      <div id="warning_password2" style="display:none; color: red;">Password is too long</div>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+      <!-- ====================================  facilities checkbox array  ====================================== -->
+              <div class="col-12">
+                  <label for="selecting Facilities" class="form-label">What describes you better ( select atleast 3 )</label>
+              </div>
+                    <div class="form-control">
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select1" value="punctual">
+                        <label class="form-check-label" for="inlineCheckbox1">punctual</label>
+                      </div>
+                    
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select2" value="Fitness">
+                        <label class="form-check-label" for="inlineCheckbox2">Fitness</label>
+                      </div>
+                    
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select3" value="Lazy">
+                        <label class="form-check-label" for="inlineCheckbox2">Lazy</label>
+                      </div>
+
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select4" value="Early-bird">
+                        <label class="form-check-label" for="inlineCheckbox1">Early-bird</label>
+                      </div>
+
+                      <div class="form-check form-check-inline col-5">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select5" value="Employee">
+                        <label class="form-check-label" for="inlineCheckbox2">Employee</label>
+                      </div>
+                      
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select6" value="Student">
+                        <label class="form-check-label" for="inlineCheckbox2">Student</label>
+                      </div>
+
+                      <div class="form-check form-check-inline col-4">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select7" value="Smoke">
+                        <label class="form-check-label" for="inlineCheckbox2">Smoke</label>
+                      </div>
+
+                      <div class="form-check form-check-inline col-6">
+                        <input class="form-check-input" name="check1" type="checkbox" id="select8" value="Drink">
+                        <label class="form-check-label" for="inlineCheckbox2">Drink</label>
+                      </div>
+                    </div>
+      <!-- ====================================  Facilities checkbox array ends  ====================================== -->
+
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="agreed" type="checkbox" value="" id="acceptTerms"
+                          required>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and
+                            conditions</a></label>
+                        <div class="invalid-feedback">You must agree before submitting.</div>
+                      </div>
+                    </div>
+                    <div class="col-12" onpointermove="checkAll()">
+                      <button class="btn btn-primary w-100" id="submit" type="submit">Create Account</button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Already have an account? <a href="/login">Log in</a></p>
+                    </div>
+
+                    <a href="https://support.google.com/mail/answer/8494?hl=en&co=GENIE.Platform%3DDesktop"
+                      class="logo d-flex align-items-center w-auto">
+                      <img src="../img/gmail.png" style="height: 40px;width:40px; border-radius: 20%;" alt="">
+                    </a>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <%- include('./partials/_script.ejs')%>
+
+</body>
+
+</html>

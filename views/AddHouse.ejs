@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./partials/bootstrap_link.ejs')%>
+    <%- include('./partials/_script.ejs')%>
+    <link href="/css/userlogsign.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center 4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                      <div class="d-flex justify-content-center py-4">
+                          <span class="d-none d-lg-block" style="font-size: 35px;">DekhMate</span>
+                      </div>
+                      <!-- End Logo -->
+                        <div class="card mb-4col-6">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 4" id="back">ADD HOUSE</h5>
+                                    <p class="text-center small">Enter your house details</p>
+                                    <% if(typeof message!=='undefined'){
+                                      %>
+                                      <p class="text-center big"><%=message%></p>
+                                      <%
+                                    }
+                                    %>
+                                </div>
+
+                                <form class="row g-4col-4 needs-validation" method="post" enctype="multipart/form-data">
+                                                                                                                                                                                                                              
+                                  
+                                <div class="col-12">
+                                  <label for="yourEmail" class="form-label">Your Email</label>
+                                  <input type="email" name="email" class="form-control" id="yourEmail" oninput="checkEmail()" required>
+                                  <div id="warning_Email" style="display:none; color: red;">Invalid Email</div>
+                                  <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                </div>
+
+                                    <div class="col-12">
+                                        <label for="yourAddress" class="form-label">Your House Address</label>
+                                        <input type="text" name="address" id="yourAddress" class="form-control"
+                                            required>
+                                        <div class="invalid-feedback">Please, enter your correct details!</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                      <label for="yourHouseType" class="form-label">Accomodation Type</label>
+                                      <select class="form-select form-select-sm  form-control" aria-label=".form-select-sm example" name="type">
+                                        <option value="Single Room+Bath">Single Room+Bath</option>
+                                        <option value="1Bhk+Bath+Kitchen">1Bhk+Bath+Kitchen</option>
+                                        <option value="2Bhk+Bath+Kitchen">2Bhk+Bath+Kitchen</option>
+                                        <option value="3Bhk+Bath+Kitchen">3Bhk+Bath+Kitchen</option>
+                                        <option value="Other">Other</option>
+                                      </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourHouseRent" class="form-label">Your House Rent</label>
+                                        <input type="number" maxlength="6" name="rent" id="yourHouseRent" class="form-control" required>
+                                        <div class="invalid-feedback">Please, enter your correct details!</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="requiredRoommate" class="form-label">Room Occupancy</label>
+                                        <!-- <input type="number" name="roommateCount" id="requiredRoommate" class="form-control" required>
+                                        <div class="invalid-feedback">Please, enter your corrct details!</div> -->
+                                    <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" name="roommateCount">
+                                      <option value="Single">Single</option>
+                                      <option value="Shared">Shared</option>
+                                      <option value="Any">Any</option>
+                                    </select>
+                                  </div>
+
+                                    <div class="col-12">
+
+                                      <label for="yourHouseType" class="form-label">Looking For</label>
+                                      <select class="form-select form-select-sm  form-control" aria-label=".form-select-sm example" name="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="any">Any</option>
+                                      </select>
+                                    </div>
+
+                                   
+                                    <!-- <div class="col-12">
+                                        <label for="selecting Facilities" class="form-label">Select Facility in your house/flate</label>
+                                    </div>
+                                    <div class="form-control">
+                                    <div class="form-check form-check-inline col-4">
+                                        <input class="form-check-input" type="checkbox" id="select1" value="Electricity">
+                                        <label class="form-check-label" for="inlineCheckbox1">Electricity</label>
+                                      </div>
+                                      <div class="form-check form-check-inline col-4">
+                                        <input class="form-check-input" type="checkbox" id="select2" value="24/7 Water Supply">
+                                        <label class="form-check-label" for="inlineCheckbox2">24/7 Water Supply</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline col-4">
+                                        <input class="form-check-input" type="checkbox" id="select3" value="Parking">
+                                        <label class="form-check-label" for="inlineCheckbox1">Parking</label>
+                                      </div>
+                                      <div class="form-check form-check-inline col-4">
+                                        <input class="form-check-input" type="checkbox" id="select4" value="Cook">
+                                        <label class="form-check-label" for="inlineCheckbox2">Cook</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline col-4">
+                                        <input class="form-check-input" type="checkbox" id="select5" value="Garden">
+                                        <label class="form-check-label" for="inlineCheckbox2">Garden</label>
+                                      </div>
+
+                                      <div class="form-check form-check-inline col-6">
+                                        <input class="form-check-input" type="checkbox" id="select6" value="House in City Cente">
+                                        <label class="form-check-label" for="inlineCheckbox2">House in City Center</label>
+                                      </div>
+                                    </div> -->
+
+                                    <label for="description" class="form-label">Description of Your Hosue*</label>
+
+                                    <textarea id="w3review" name="houseDescription" rows="5" cols="50"></textarea>
+
+                                      <br><br>
+
+                                      <div class="col-12">
+                                        <label for="yourFile" class="form-label">Upload 3 Images</label>
+                                        <input type="file" name="flate" multiple class="form-control" id="yourFile" required>
+                                        <div class="invalid-feedback">Please select three file</div>
+                                      </div>
+                                      
+                                      <br><br>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+  </body>
+  </html>

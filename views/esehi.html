@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <title>new modal</title>
+  <style>
+    #pic {
+      height: 100%;
+      width: 70%;
+    }
+
+
+    /* #logo {
+      height: 180px;
+      width: 400px;
+
+    } */
+
+    #roomD1 li{
+       list-style: none;
+    }
+   
+    
+    #roomD1{
+      margin-left: -10px;
+     width: 80%;
+     height: 80px;
+
+    }
+   #footer{
+    margin-top: -50px;
+   }
+    @media (max-width: 766px) {
+   
+      #logo {
+        height: 60%;
+        width: 100%;
+      }
+
+      #footer {
+        margin-left: -900%;
+      }
+
+      #pic {
+        height: 15vh;
+        width: 15vh;
+        margin-left: -800%;
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+    
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+           <h3><font style="color:rgb(8, 249, 241)">Dekh</font>Mate</h3>
+            
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+<br>
+   
+      <div class="row">
+        <div class=" col-sm-6 col-lg-4">
+           <img id="pic"  src="https://bootdey.com/img/Content/avatar/avatar7.png">  
+        </div>
+        <!---------------------------Renter details------------------------------------------>
+        <div class="col-lg-8" id="roomD1">
+            <br>
+          <ul>
+            <li><span>  <b>  <i class="bi bi-envelope-at-fill"></i> Name - </b></span><span>Parul Sahu</span><i class="glyphicon glyphicon-envelope"></i></li>
+            <li><span><b>Email - </b></span><span>parulsahu@gmail.com</span></li>
+            <li><span><b>Contact - </b></span><span>9928756383</span></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" value="sahuParul@gmail.com" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

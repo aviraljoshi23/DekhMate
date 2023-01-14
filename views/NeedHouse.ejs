@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+                window.onload=function(){
+                var today = new Date().toISOString().split('T')[0];
+                document.getElementById("yourshiftingdate").setAttribute('min', today);
+                }
+    </script> 
+    <style>
+        body{
+            background-image: linear-gradient(rgb(38, 131, 160) 0%,white 40%,green 100%);
+        }
+    </style>
+    <title>Document</title>
+    <%- include('./partials/bootstrap_link.ejs')%>
+    <%- include('./partials/_script.ejs')%>
+    <link href="/css/userlogsign.css" rel="stylesheet">
+</head>
+
+<body>
+      <!-- Header Section  -->
+    <div class="container">
+        
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center 4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        
+
+                        <div class="d-flex justify-content-center py-4">
+                            <span class="d-none d-lg-block" style="font-size: 35px;">DekhMate</span>
+                        </div>
+                        <div class="card mb-4col-6">
+                            
+                            <div class="card-body">
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Send Your Data</h5>
+                                    <p class="text-center small">Enter your personal details to create account</p>
+                                    <% if(typeof message!=='undefined'){
+                                      %>
+                                      <p class="text-center big"><%=message%></p>
+                                      <%
+                                    }
+                                    %>
+                                  </div>
+                                <div class="4 pb-2">
+                                    <h5 class="card-title text-center pb-0 4">Need HOUSE</h5>
+                                    <p class="text-center small">Enter your details</p>
+                                </div>
+                                
+                                <form class="row g-4col-4 needs-validation" method="post" >
+                                    
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Your Email</label>
+                                        <input type="email" name="email" class="form-control" id="yourEmail" oninput="checkEmail()" required>
+                                        <div id="warning_Email" style="display:none; color: red;">Invalid Email</div>
+                                        <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourHouseType" class="form-label">Accomodation Type</label>
+                                        <select class="form-select form-select-sm  form-control" aria-label=".form-select-sm example" name="type">
+                                          <option value="Single Room+Bath">Single Room+Bath</option>
+                                          <option value="1Bhk+Bath+Kitchen">1Bhk+Bath+Kitchen</option>
+                                          <option value="2Bhk+Bath+Kitchen">2Bhk+Bath+Kitchen</option>
+                                          <option value="3Bhk+Bath+Kitchen">3Bhk+Bath+Kitchen</option>
+                                          <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="choose roommate's Gender" class="form-label">Looking For</label>
+                                      <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" name="gender" >
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Any">Any</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="Occupany" class="form-label">Occupany</label>
+                                    <select class="form-select form-select-sm form-control" aria-label=".form-select-sm example" name="Occupany" aria-placeholder="Select any one option">
+                                        <option disabled selected>Select any one</option>
+                                        <option value="Single">Single</option>
+                                        <option value="Shared">Shared</option>
+                                        <option value="Any">Any</option>
+                                    </select>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-12">
+                                        <label for="yourArea" class="form-label">Add Your Location</label>
+                                        <input type="text" name="area" id="yourArea" class="form-control" required>
+                                        <div class="invalid-feedback">Please, enter your corrct details!</div>
+                                    </div>
+                                    
+                                    
+                                    <div class="col-12">
+                                        <label for="yourHouseRent" class="form-label">Approx Rent*</label>
+                                        <input type="number" name="rent" id="yourHouseRent" class="form-control" required>
+                                        <div class="invalid-feedback">Please, enter your corrct details!</div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourContact" class="form-label">Your Contact No.</label>
+                                        <input type="text" name="contact" class="form-control" maxlength="10" id="yourContactNo" onkeypress="checkContact()" required>
+                                        <div id="warning_Contact" style="display:none; color: red;">Invalid Contact</div>
+                                        <div class="invalid-feedback">Please, enter your contact!</div>
+                                    </div>
+
+                                    
+                                    <div class="col-12">
+                                        <label for="shiftingDate" class="form-label">Need To Shift*</label>
+                                        <input type="date"  name="shiftingDate" id="yourshiftingdate" class="form-control" required>
+                                        <div class="invalid-feedback">Please, enter your correct details!</div>
+                                    </div>
+
+                                    <label for="description" class="form-label">Description*</label>
+
+                                    <textarea id="w3review" name="description" rows="4" cols="50"></textarea>
+                                    
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit" onclick="facitityArray()">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+             </section>
+            </div>                    
+            <%- include('./partials/_script.ejs')%>
+        </body>
+
+        </html>
